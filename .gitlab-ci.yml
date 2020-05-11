@@ -6,30 +6,21 @@ stages:
 build_maven:
   stage: build
   script:
-   - echo "build maven....."
-   - echo "mvn clean"
+   - echo "build unittest....."
    - echo "done"
+  only:
+   - master
   tags:
-   - unittest01 
+   - gitlab-runner_unittest 
 
-test_springboot:
-  stage: test
-  script:
-   - echo "run java test....."
-   - echo "java -test"
-   - echo "done"
-  tags:
-   - unittest01 
 
 deploy_springboot:
   stage: deploy
   script:
-   - echo "deploy springboot...."
-   - echo "run mvn install"
-   - echo "create new file test.txt"
-   - touch test.txt
-   - echo "move test.txt to home  dir"
-   - mv test.txt /tmp
+   - echo "deploy unittest...."
+   - /home/deploy_project/gitlab_deploy/deploy_unittest.sh
    - echo "done"
+  only:
+   - master
   tags:
-   - unittest01  
+   - gitlab-runner_unittest  
