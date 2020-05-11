@@ -1,0 +1,35 @@
+stages:
+- build
+- test
+- deploy
+
+build_maven:
+  stage: build
+  script:
+   - echo "build maven....."
+   - echo "mvn clean"
+   - echo "done"
+  tags:
+   - raspi
+
+test_springboot:
+  stage: test
+  script:
+   - echo "run java test....."
+   - echo "java -test"
+   - echo "done"
+  tags:
+   - raspi
+
+deploy_springboot:
+  stage: deploy
+  script:
+   - echo "deploy springboot...."
+   - echo "run mvn install"
+   - echo "create new file test.txt"
+   - touch test.txt
+   - echo "move test.txt to home  dir"
+   - mv test.txt /tmp
+   - echo "done"
+  tags:
+   - raspi 
