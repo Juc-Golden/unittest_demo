@@ -18,9 +18,9 @@ deploy_springboot:
   stage: deploy
   script:
    - echo "deploy unittest...."
-   - chmod -R 777 /home/deploy_project/gitlab_deploy/unitest_demo
+   - chmod -R 777 /home/deploy_project/unitest_demo
    - /home/deploy_project/gitlab_deploy/deploy_unittest.sh
-   - chmod -R 755 /home/deploy_project/gitlab_deploy/unitest_demo
+   - chmod -R 755 /home/deploy_project/unitest_demo
    - echo "done"
   only:
    - master
