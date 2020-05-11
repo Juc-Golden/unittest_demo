@@ -10,7 +10,7 @@ build_maven:
    - echo "mvn clean"
    - echo "done"
   tags:
-   - unittest
+   - unittest01 
 
 test_springboot:
   stage: test
@@ -19,7 +19,7 @@ test_springboot:
    - echo "java -test"
    - echo "done"
   tags:
-   - unittest
+   - unittest01 
 
 deploy_springboot:
   stage: deploy
@@ -32,4 +32,4 @@ deploy_springboot:
    - mv test.txt /tmp
    - echo "done"
   tags:
-   - unittest 
+   - unittest01  
