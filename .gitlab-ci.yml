@@ -18,7 +18,6 @@ deploy_springboot:
   stage: deploy
   script:
    - echo "deploy unittest...."
-   - /home/deploy_project/gitlab_deploy/deploy_unittest.sh
    - echo "done"
   only:
    - master
